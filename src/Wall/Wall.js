@@ -1,6 +1,5 @@
 import { useRef, useEffect, useMemo } from "react"
 import { OrbitControls , shaderMaterial, Center} from '@react-three/drei'
-import { useAnimations,useGLTF, Clone } from "@react-three/drei"
 import vertexShader from './shaders/vertex.js'
 import fragmentShader from './shaders/fragment.js'
 import gsap from "gsap"
@@ -77,10 +76,12 @@ let checkingSpeeech = false
       recognition.onresult = (event) => {
         const color = event.results[0][0].transcript;
        
-        // console.log(`Confidence: ${event.results[0][0].confidence}`);
-        // console.log(event.results[0][0].transcript)
-        // console.log(event.results[0][0])
-        if(event.results[0][0].transcript.includes('fish sauce') || event.results[0][0].transcript.includes('fish')|| event.results[0][0].transcript.includes('sauce') || event.results[0][0].transcript.includes('raph')){
+        if(event.results[0][0].transcript.includes('fish sauce') 
+        || event.results[0][0].transcript.includes('fish')||
+     event.results[0][0].transcript.includes('sauce') ||
+      event.results[0][0].transcript.includes('raph')||
+      event.results[0][0].transcript.includes('source') ||
+       event.results[0][0].transcript.includes('jeremy')){
             wallMaterial.current.uniforms.uAlpha.value = 0
            
            reveal()
@@ -121,20 +122,11 @@ let checkingSpeeech = false
     })
 
 
-    const handleMouseMove = (event) => {
-     
-
-        wallMaterial.current.uniforms.uMousePosition.value = event.uv;
-   
-    
-    
-    
-      };
-
+  
 
     return (
-        <mesh ref={mesh} onPointerMove={handleMouseMove}>
-          <planeGeometry args={[20, 20, 20]} />
+        <mesh ref={mesh} >
+          <planeGeometry args={[2, 2]} />
           <wallMaterial ref={wallMaterial} side={THREE.DoubleSide} transparent/>
 
    
