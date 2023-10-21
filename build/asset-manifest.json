@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.254b0a0a.css",
+    "main.js": "./static/js/main.aec21275.js",
+    "static/media/Passio-Graphis.otf": "./static/media/Passio-Graphis.f61d065e19df1e26e98d.otf",
+    "index.html": "./index.html",
+    "main.254b0a0a.css.map": "./static/css/main.254b0a0a.css.map",
+    "main.aec21275.js.map": "./static/js/main.aec21275.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.254b0a0a.css",
+    "static/js/main.aec21275.js"
+  ]
+}

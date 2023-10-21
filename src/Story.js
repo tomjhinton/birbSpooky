@@ -2,6 +2,11 @@ import { Html } from "@react-three/drei"
 
 export default function Experience(props){
 
+    const handleUpdateState = () => {
+        props.setDisplayState(!props.displayState);
+        console.log(props)
+      }
+
 
 return<>
 <Html
@@ -30,7 +35,7 @@ One fateful evening, while the moon hung low and a thick fog enveloped Willowbro
 
 The cottage appeared as if summoned by dark magic, with its timeworn boards creaking in the chilling wind. The air was heavy with an unearthly silence as Raph pushed open the creaking door. Inside, the cottage was a twisted labyrinth of dusty relics, but what caught Raph's eye was a peculiar bottle on a cluttered shelf.
 
-It was a small, ancient flask, its contents an oily, viscous liquid. The label read "Fisherman's Curse" in faded, foreboding letters. Raph's trembling hands reached for the bottle, and his heart raced with anticipation. The legends he had heard painted images of grotesque and horrifying visions, but Raph was undeterred.
+It was a small, ancient flask, its contents an oily, viscous liquid. The label read <span onPointerEnter={handleUpdateState} onPointerLeave={handleUpdateState}>"Fisherman's Curse"</span> in faded, foreboding letters. Raph's trembling hands reached for the bottle, and his heart raced with anticipation. The legends he had heard painted images of grotesque and horrifying visions, but Raph was undeterred.
 
 With a deep breath, Raph uncorked the bottle and took a hesitant sip. A wave of nausea washed over him, and he felt an icy grip on his soul. His surroundings transformed, and he found himself in a nightmarish world. Phantoms and shadows danced in torment, whispering sinister secrets that sent shivers down his spine.
 

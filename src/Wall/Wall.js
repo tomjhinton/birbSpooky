@@ -43,13 +43,13 @@ let checkingSpeeech = false
         if(!checkingSpeeech){
             checkingSpeeech = true
         recognition.start();
-        console.log("Ready to receive a color command.");
-        console.log(recognition)
+        // console.log("Ready to receive a color command.");
+        // console.log(recognition)
         }
       };
 
       recognition.addEventListener("audioend", () => {
-        console.log("Audio capturing ended");
+        // console.log("Audio capturing ended");
       });
 
       let running = false;
@@ -58,25 +58,32 @@ let checkingSpeeech = false
           running = false;
       };
 
+
+      function reveal(){
+
+        if(!running){
+            running = true
+        gsap.to(wallMaterial.current.uniforms.uAlpha, {
+            duration: 6.5,
+            value: wallMaterial.current.uniforms.uAlpha.value + (Math.PI * 2.),
+            delay: 0,
+            onComplete: finished
+          });
+
+        }
+
+      }
+
       recognition.onresult = (event) => {
         const color = event.results[0][0].transcript;
        
-        console.log(`Confidence: ${event.results[0][0].confidence}`);
-        console.log(event.results[0][0].transcript)
+        // console.log(`Confidence: ${event.results[0][0].confidence}`);
+        // console.log(event.results[0][0].transcript)
         // console.log(event.results[0][0])
         if(event.results[0][0].transcript.includes('fish sauce') || event.results[0][0].transcript.includes('fish')|| event.results[0][0].transcript.includes('sauce') || event.results[0][0].transcript.includes('raph')){
             wallMaterial.current.uniforms.uAlpha.value = 0
-            if(!running){
-                running = true
-            gsap.to(wallMaterial.current.uniforms.uAlpha, {
-                duration: 6.5,
-                value: wallMaterial.current.uniforms.uAlpha.value + (Math.PI * 2.),
-                delay: 0,
-                onComplete: finished
-              });
-
-            }
            
+           reveal()
 
            
         }

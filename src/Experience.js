@@ -13,14 +13,15 @@ import Wall from "./Wall/Wall.js"
 
 export default function Experience(){
 
+  const [displayState, setDisplayState] = useState(true);
 
 
 
     return <>
     <OrbitControls makeDefault enableZoom={false} maxPolarAngle={Math.PI * .5} />
-      <Story />
+      <Story displayState={displayState} setDisplayState={setDisplayState}/>
      <Monster />
-     <Wall />
+     {displayState && <Wall displayState={displayState} />}
      
      
 
