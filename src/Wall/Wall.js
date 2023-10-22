@@ -31,7 +31,7 @@ export default function Experience(props){
       speechRecognitionList.addFromString(grammar, 1);
 
  recognition.grammars = speechRecognitionList;
-recognition.continuous = false;
+recognition.continuous = true;
 recognition.lang = "en-US";
 recognition.interimResults = true;
 recognition.maxAlternatives = 1;
@@ -90,7 +90,7 @@ let checkingSpeeech = false
         }
       };
 
-      recognition.onend = onEnd;
+    //   recognition.onend = onEnd;
       function onEnd() {
         setTimeout(() => {
             console.log('Speech recognition has stopped. Starting again ...');

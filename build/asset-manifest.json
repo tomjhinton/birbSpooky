@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "./static/css/main.160d6f4e.css",
-    "main.js": "./static/js/main.5aab5098.js",
+    "main.js": "./static/js/main.9f02c8dc.js",
     "static/media/Passio-Graphis.otf": "./static/media/Passio-Graphis.f61d065e19df1e26e98d.otf",
     "index.html": "./index.html",
     "main.160d6f4e.css.map": "./static/css/main.160d6f4e.css.map",
-    "main.5aab5098.js.map": "./static/js/main.5aab5098.js.map"
+    "main.9f02c8dc.js.map": "./static/js/main.9f02c8dc.js.map"
   },
   "entrypoints": [
     "static/css/main.160d6f4e.css",
-    "static/js/main.5aab5098.js"
+    "static/js/main.9f02c8dc.js"
   ]
 }
