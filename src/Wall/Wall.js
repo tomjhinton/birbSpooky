@@ -92,10 +92,15 @@ let checkingSpeeech = false
 
       recognition.onend = onEnd;
       function onEnd() {
-        console.log('Speech recognition has stopped. Starting again ...');
-        checkingSpeeech = true
-        recognition.start();
+        setTimeout(() => {
+            console.log('Speech recognition has stopped. Starting again ...');
+            checkingSpeeech = true
+            recognition.start();
+        }, 500)
+       
+
     }
+    
 
 
     const mesh = useRef();

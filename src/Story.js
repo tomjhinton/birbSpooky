@@ -1,4 +1,4 @@
-import { Html } from "@react-three/drei"
+import { Float, Html } from "@react-three/drei"
 
 export default function Experience(props){
 
@@ -9,9 +9,10 @@ export default function Experience(props){
 
 
 return<>
+
 <Html
   as='div' // Wrapping element (default: 'div')
-  wrapperClass // The className of the wrapping element (default: undefined)
+   // The className of the wrapping element (default: undefined)
   prepend // Project content behind the canvas (default: false)
   center // Adds a -50%/-50% css transform (default: false) [ignored in transform mode]
   fullscreen // Aligns to the upper-left corner, fills the screen (default:false) [ignored in transform mode]
